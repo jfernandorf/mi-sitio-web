@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Tecnología</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #ff4d4d, #ff0000);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ff4d4d;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('./img/innovacion.jpg') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff4d4d;
+        }
+        section {
+            padding: 60px 10%;
+            text-align: center;
+            background: #222;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+        section:hover {
+            transform: scale(1.03);
+        }
+        section .info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #333;
+            border-radius: 8px;
+        }
+        button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Hover efectos en los botones de información */
+        .dropdown-content a:hover {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Estilos para modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+            overflow-y: auto;
+            text-align: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            color: #222;
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showInfo(id) {
+            var info = document.getElementById(id);
+            info.style.display = (info.style.display === "none" || info.style.display === "") ? "block" : "none";
+        }
+
+        // Modal window
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Universidad Valle de Grijalva</h1>
+        <h2>Jaime Fernando - Ingeniería en Sistemas Computacionales</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#robots">Robots</a></li>
+            <li><a href="#ia">Inteligencia Artificial</a></li>
+            <li><a href="#iot">Internet de las Cosas</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">Innovación que transforma el futuro</div>
+
+    <section id="robots">
+        <h2 class="section-title">Robots y su Impacto</h2>
+        <img src="https://files.oaiusercontent.com/file-VjwYqZo2UukWZHJfes4TaC?se=2025-03-07T04%3A10%3A48Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc87432c5-d317-4c3e-9aa9-b722a8502495.webp&sig=sbRJk6/NmPe0gFL0XZe6MmeUTLXoIYv%2B7m2Dp9dM9/Y%3D" alt="imagen de robots">
+        <button onclick="showInfo('robots-info')">Más Información</button>
+        <div id="robots-info" class="info">
+            Los robots están revolucionando muchas industrias, desde la automotriz hasta la medicina. Realizan tareas repetitivas con precisión, lo que permite a los seres humanos enfocarse en tareas de mayor valor agregado.
+        </div>
+
+        <div class="dropdown">
+            <button>Aplicaciones en la Industria</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showInfo('robot-industria')">Industria Automotriz</a>
+                <a href="#" onclick="showInfo('robot-fabricacion')">Fabricación de Productos</a>
+            </div>
+        </div>
+        <div id="robot-industria" class="info">
+            Los robots en la industria automotriz realizan tareas como soldadura, pintura y ensamblaje, mejorando la velocidad y calidad en la fabricación de vehículos.
+        </div>
+        <div id="robot-fabricacion" class="info">
+            En la fabricación de productos, los robots son fundamentales para lograr la precisión en la producción y mejorar la eficiencia operativa.
+        </div>
+    </section>
+
+    <section id="ia">
+        <h2 class="section-title">Inteligencia Artificial</h2>
+        <img src="https://files.oaiusercontent.com/file-S4xSUafCRFCiUbvG8S35hN?se=2025-03-07T04%3A17%3A47Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D000afa4b-0e01-4430-aab0-cbd101b96671.webp&sig=FRrc2ZY/ZX7NNs6WknpHv/XhjisZD6gCOXrdy4KuAjI%3D">
+        <button onclick="showInfo('ia-info')">Más Información</button>
+        <div id="ia-info" class="info">
+            La IA permite que las máquinas imiten el comportamiento humano, mejorando sectores como la medicina, la educación y la automoción. La IA permite la automatización de tareas complejas y ayuda a la toma de decisiones basada en grandes volúmenes de datos.
+        </div>
+        
+        <div class="dropdown">
+            <button>Aplicaciones de la IA</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showInfo('ia-medica')">Medicina</a>
+                <a href="#" onclick="showInfo('ia-automotriz')">Automotriz</a>
+            </div>
+        </div>
+        <div id="ia-medica" class="info">
+            En medicina, la IA está revolucionando el diagnóstico y la personalización del tratamiento, ayudando a los médicos a detectar enfermedades de manera más temprana.
+        </div>
+        <div id="ia-automotriz" class="info">
+            La IA en el sector automotriz permite la conducción autónoma, reduciendo los accidentes y mejorando la seguridad en las carreteras.
+        </div>
+    </section>
+
+    <section id="iot">
+        <h2 class="section-title">Internet de las Cosas (IoT)</h2>
+        <img src="https://img.freepik.com/vector-premium/internet-cosas-iot-concepto-redes-dispositivos-conectados-telarana-conexiones-red-fondo-azul-futurista-concepto-diseno-digital-holograma-iot_74231-1372.jpg">
+        <button onclick="showInfo('iot-info')">Más Información</button>
+        <div id="iot-info" class="info">
+            IoT conecta dispositivos a través de Internet, creando redes inteligentes que permiten optimizar recursos, mejorar la eficiencia y garantizar la seguridad.
+        </div>
+
+        <div class="dropdown">
+            <button>Aplicaciones del IoT</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showInfo('iot-casa')">Casa Inteligente</a>
+                <a href="#" onclick="showInfo('iot-industria')">Industria 4.0</a>
+            </div>
+        </div>
+        <div id="iot-casa" class="info">
+            En el hogar inteligente, los dispositivos IoT permiten automatizar tareas cotidianas, como el control de temperatura, seguridad y entretenimiento.
+        </div>
+        <div id="iot-industria" class="info">
+            IoT en la industria mejora el monitoreo de maquinaria, permite la predicción de fallas y optimiza el uso de recursos en tiempo real.
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Jaime Fernando Ruiz Farrera. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

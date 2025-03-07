@@ -1,0 +1,7 @@
+body {
+    background-image: url('https://files.oaiusercontent.com/file-St7jWbtcz47v1uVukn889v?se=2025-03-07T04%3A02%3A24Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70aebeee-4be8-4b7a-a359-202a95b4a6da.webp&sig=Go6zczSUBLU%2B3sQlSzzJvzZh1YKXSkihhnvkFdBTxgA%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Imagen fija mientras se hace scroll */
+}
